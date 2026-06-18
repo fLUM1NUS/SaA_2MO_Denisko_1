@@ -1,31 +1,47 @@
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 void main() {
-    MyQueue<Integer> q = new MyQueue<>();
-    q.enqueue(1);
-    q.enqueue(2);
-    q.enqueue(3);
-    q.enqueue(4);
+    MyBinaryTree<Integer> tree = new MyBinaryTree<>();
 
-    for (int i = 0; i < 3; i++) {
-        System.out.println(q.dequeue());
-    }
-    System.out.println(q.peek());
-    System.out.println(q.dequeue());
-    q.enqueue(5);
-    q.enqueue(6);
-    System.out.println(q.dequeue());
-    q.enqueue(7);
-    while (q.len != 0) {
-        System.out.println(q.dequeue());
-    }
+    System.out.println("5, 3, 7, 2, 4, 6, 8");
+    tree.add(5);
+    tree.add(3);
+    tree.add(7);
+    tree.add(2);
+    tree.add(4);
+    tree.add(6);
+    tree.add(8);
+    System.out.println(tree.count());
 
-    System.out.println("try to dequeue() from empty queue? 'y' for yes");
-    try {
-        if (System.in.read() == 121) {
-            q.dequeue();
-        }
-    } catch (IOException e) {
-        throw new RuntimeException(e);
-    }
+    System.out.println("4 in: " + tree.contains(4));
+    System.out.println("10 in: " + tree.contains(10));
+
+    System.out.print("Preorder:\t");
+    tree.preOrder(value -> System.out.print(value + " "));
+    System.out.println();
+
+    System.out.print("Inorder:\t");
+    tree.inOrder(value -> System.out.print(value + " "));
+    System.out.println();
+
+    System.out.print("Postorder:\t");
+    tree.postOrder(value -> System.out.print(value + " "));
+    System.out.println();
+
+    System.out.println("-2" + tree.remove(2));
+    tree.inOrder(value -> System.out.print(value + " "));
+    System.out.println();
+
+    System.out.println("-3" + tree.remove(3));
+    tree.inOrder(value -> System.out.print(value + " "));
+    System.out.println();
+
+    System.out.println("-5" + tree.remove(5));
+    tree.inOrder(value -> System.out.print(value + " "));
+    System.out.println();
+
+    System.out.println(tree.isEmpty());
+    tree.clear();
+    System.out.println(tree.isEmpty());
+
 }
