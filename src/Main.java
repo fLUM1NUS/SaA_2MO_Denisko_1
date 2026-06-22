@@ -2,32 +2,16 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 void main() {
 
-    MyLinkedList<Integer> list = new MyLinkedList<>();
-    list.add(1);
-    list.add(2);
-    list.add(3);
+    MySet<Integer> set1 = new MySet<>();
+    set1.add(1); set1.add(2); set1.add(3); set1.add(4);
+    MySet<Integer> set2 = new MySet<>();
+    set2.add(1); set2.add(2); set2.add(5); set2.add(6);
 
-    System.out.println(list.getFirstO() + " " + list.getLastO());
-    System.out.println(list.getFirst() + " " + list.getLast());
-    System.out.println(list.removeLast());
-    System.out.println(list.remove());
-    System.out.println(list.getFirstO() + " " + list.getLastO());
-    System.out.println(list.getFirst() + " " + list.getLast());
-    list.add(10); list.add(20);
-    System.out.println(Arrays.toString(list.toArray()));
+    System.out.println( set2.symmetricDifference(set1).items );
 
-    System.out.println();
-
-    LinkedList<Integer> list2 = new LinkedList<>();
-    list2.add(1);
-    list2.add(2);
-    list2.add(3);
-    System.out.println(list2.getFirst() + " " + list2.getLast());
-    System.out.println(list2.pop());
-    list2.add(1,0);
-    System.out.println(list2.pop());
-    System.out.println(list2.pop());
-    System.out.println(list2.pop());
+    MySet<Integer> set3 = new MySet<>();
+    set3.add(1); set3.add(2); set3.add(3); set3.add(4);
+    System.out.println(set1.isSubset(set3));
 
 
 }
