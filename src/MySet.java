@@ -1,9 +1,8 @@
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 
 public class MySet<T extends Comparable<T>> implements Iterable<T> {
-    ArrayList<T> items = new ArrayList<T>();
+    ArrayList<T> items = new ArrayList<>();
 
     public MySet() {}
     public MySet(Iterable<T> items) {addRange(items);}
@@ -21,7 +20,7 @@ public class MySet<T extends Comparable<T>> implements Iterable<T> {
     public int size(){return items.size();}
 
     public MySet<T> union(MySet<T> set2){
-        MySet<T> res = new MySet(items);
+        MySet<T> res = new MySet<>(items);
         res.addRange(set2.items);
         return res;
     }
